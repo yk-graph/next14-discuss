@@ -23,7 +23,6 @@ export default async function Home() {
         <div>Signed Out</div>
       )}
 
-      {/* [Tips] クライアントサイドでの認証方法 */}
       <Profile />
     </div>
   );

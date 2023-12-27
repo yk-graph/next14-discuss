@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import { useSession } from 'next-auth/react';
+import { useSession } from "next-auth/react";
 
+// [Tips] クライアントサイドでの認証方法
 export default function Profile() {
   const session = useSession();
 
