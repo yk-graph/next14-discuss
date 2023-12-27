@@ -4,12 +4,12 @@
 
 "use client";
 
-import { NextUIProvider } from "@nextui-org/react";
+import { NextUIProvider as Provider } from "@nextui-org/react";
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function NextUIProviders({ children }: Props) {
-  return <NextUIProvider>{children}</NextUIProvider>;
+export default function NextUIProvider({ children }: Props) {
+  return <Provider>{children}</Provider>;
 }

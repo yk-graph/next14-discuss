@@ -3,7 +3,7 @@
 import * as auth from "@/lib/auth";
 
 export async function signIn() {
-  return auth.signIn();
+  return auth.signIn("github");
 }
 
 export async function signOut() {

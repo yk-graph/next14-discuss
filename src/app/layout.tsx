@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NextUIProviders from "@/providers/next-ui-providers";
+import SessionProvider from "@/providers/session-provider";
+import NextUIProvider from "@/providers/next-ui-providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <NextUIProviders>{children}</NextUIProviders>
-      </body>
+      <SessionProvider>
+        <body className={inter.className}>
+          <NextUIProvider>{children}</NextUIProvider>
+        </body>
+      </SessionProvider>
     </html>
   );
 }
