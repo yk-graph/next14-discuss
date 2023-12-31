@@ -1,7 +1,5 @@
-import { Button } from "@nextui-org/react";
-import * as actions from "@/actions";
 import { auth } from "@/lib/auth";
-import Profile from "@/components/profile";
+import TopicCreateForm from "@/components/topics/topic-create-form";
 
 export default async function Home() {
   // [Tips] サーバーサイドでの認証方法
@@ -9,21 +7,21 @@ export default async function Home() {
 
   return (
     <div>
-      <form action={actions.signIn}>
-        <Button type="submit">Sign In</Button>
-      </form>
+      <div className="grid grid-cols-4 gap-4 p-4">
+        <div className="col-span-3">
+          <h1 className="text-xl m-2">Top Posts</h1>
+        </div>
+        <div>
+          <TopicCreateForm />
+        </div>
+      </div>
 
-      <form action={actions.signOut}>
-        <Button type="submit">Sign Out</Button>
-      </form>
-
-      {session?.user ? (
+      {/* サーバーサイドでsession情報を取得した場合、下記のように記述して認証済みかどうかを判定できる */}
+      {/* {session?.user ? (
         <div>{JSON.stringify(session.user)}</div>
       ) : (
         <div>Signed Out</div>
-      )}
-
-      <Profile />
+      )} */}
     </div>
   );
 }
